@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="Navegacao">
+            <nav style="float:left">
+                <h2>BEM VINDO A <br> LOJAS INGLESAS: </h2>
+                <ul>
+                    <li><a href="/Pw1-main/pagini.html">Pagina Inicial</a></li>
+                    <li><a href="/Pw1-main/pagClients.html">Pagina De Clientes</a></li>
+                    <li><a href="/Pw1-main/pagprodutos.Html" target="_blank">Pagina de Produtos</a></li>
+                    <li><a href="/Pw1-main/pagCompraeVenda.html" target="_blank">Pagina de Compra/Vendas</a></li>
+                    <li><a href="/Pw1-main/pagRelatorios.html" target="_blank">Pagina de Relatorios</a></li>
+                    <li><a href="/Pw1-main/pagini.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="Formulario dos Clientes">
+            <form>
+                <br>
+                <label for="nome">Digite seu nome?</label>
+                <br>
+                <input type="text" id="nome" name="nome">
+                <br>
+                <label for="nasce">Digite sua data de nascimento?</label>
+                <br>
+                <input type="date" id="nasce" name="nascimento">
+                <br>
+                <label for="email">Digite o seu email ?</label>
+                <br>
+                <input type="email" id="mail" name="mail">
+                <br>
+                <label for="cpf">Digite o seu cpf:</label>
+                <br>
+                <input type="number" id="cpfusuario" name="cpfusuario">
+                <br>
+                <label for="salario">Digite o seu Salario:</label>
+                <br>
+                <input type="number" id="salariousuario" name="salariousuario">
+                <label for="Telefone">Digite o seu telefone:</label>
+                <input type="number" id="telefone" name="telefone">
+                <label for="sexo">Sexo:</label>
+                <input type="radio" name="sexo" value="femi">Feminino <br>
+                <input type="radio" name="sexo" value="masc">Masculino<br>
+                <input type="radio" name="sexo" value="nbi">Não binario<br>
+                <input type="radio" name="sexo" value="pnid">Prefiro não identificas<br>
+                <div style= "margin: 2px 0px 0px 0px">
+                    <input type="submit" value="Enviar" style="float: right;">
+        </div><br>
+        </form>
+        <div id="Formularioprodutos">
+            <form>
+                <label for="Codigo">Qual o codigo do produto?</label>
+                <br>
+                <input type="number" id="codigo" name="codigo">
+                <br>
+                <label for="Descricao">Qual a descrição do produto?</label>
+                <input type="text" id="descricao" name="Descricao">
+                <label for="Tamanho">Digite o tamanho do produto em cm</label>
+                <input type="number" id="tamanho" name="tamanho">
+                <label for="Peso">Qual o peso do produto?</label>
+                <input type="number" id="peso" name="peso">
+                <label for="altura">Qual a altura do produto?</label>
+                <input type="number" id="altura" name="altura">
+                <label for="preco">Qual o preço</label>
+                <input type="number" id="preco" name="preço">
+                <label for="desconto">Qual o desconto?</label>
+                <input type="number" id="desconto" name="desconto">
+                <label for="datadevalidade">Qual a data de validade?</label>
+                <input type="date" id="dataval" name="data de validade">
+                <div style= "margin: 2px 0px 0px 0px">
+                    <input type="submit" value="Enviar" style="float: right;">
+            </form>
+        </div>
+        <div id="Formulariocompra/venda">
+            <form>
+                <label for="Cpfcliente">Qual o cpf do cliente?</label>
+                <input type="number" id="cpfcliente" name="Cpfdocliente">
+                <label for="Códigodoproduto">Código do produto: </label>
+                <input type="number" id="codogprod" name="codigodoproduto">
+                <label for="datacompra">data: </label>
+                <input type="date" id="datacompra" name="datadacompra">
+                <label for="horacompra">Horario: </label>
+                <input type="time" id="horacompra" name="horadacompra">
+                <label for="valorproduto">valor do produto: </label>
+                <input type="number" id="valorproduto" name="valorproduto">
+                <div style= "margin: 2px 0px 0px 0px">
+                    <input type="submit" value="Enviar" style="float: right;">
+            </form>
+        </div>
+        <div id="TabelaClientes(A)">
+            <table id="PrintTabelaCliente(A)">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>E-mail</th>
+                        <th>CPF</th>
+                        <th>Salário</th>
+                        <th colspan="3">Telefones</th>
+                    </tr>           
+                 </thead>
+                <tbody>
+                    <tr>
+                        <td>Kayky</td>
+                        <td>05/11/2006</td>
+                        <td>kayky.flavio@aluno.ifsp.edu.br</td>
+                        <td>161.161.666-65</td>
+                        <td>500.002,00</td>
+                        <td>(16)982149333</td>
+                        <td>(16)982149333</td>
+                        <td>(16)982513899</td>
+                    </tr>
+                    <tr>
+                        <td>Luana</td>
+                        <td>17/12/2002</td>
+                        <td>monteiro.luana@aluno.ifsp.edu.br</td>
+                        <td>101.121.141-15</td>
+                        <td>00.002,00</td>
+                        <td>(16)982513899</td>
+                        <td>(16)981397566</td>
+                        <td>(16)983698452</td>
+
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>31/12/2222</td>
+                        <td>maria.maria@aluno.ifsp.edu.br</td>
+                        <td>554.443.332-10</td>
+                        <td>6.200.002,00</td>
+                        <td>(16)981342697</td>
+                        <td>(16)981342697</td>
+                        <td>(16)982695145</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="TabelaProdutos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Descrição</th>
+                        <th>Tamanho</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                        <th>Preço</th>
+                        <th>Codigo</th>
+                        <th>Desconto</th>
+                        <th>Data de Validade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                        <td>Chocolate amargo</td>
+                        <td>Chocolate de sabor Amargo</td>
+                        <td>1x18x9 cm</td>
+                        <td>90g</td>
+                        <td>9cm</td>
+                        <td>R$ 10,00</td>
+                        <td>66088002</td>
+                        <td>3%</td>
+                        <td>02/06/2022</td>     
+                    </tr>
+                    <tr>
+                        <td>Pasta de amendoim sabor Creme de avelã</td>
+                        <td>Pasta de amendoim sabor Creme de avelã com adição de açucar</td>
+                        <td>10x10x12cm</td>
+                        <td>1kg</td>
+                        <td>12cm</td>
+                        <td>R$ 27,00</td>
+                        <td>55023145</td>
+                        <td>5%</td>
+                        <td>06/06/2022</td>
+                    </tr>
+                    <tr>
+                        <td>Pacote de Cookie de chocolate</td>
+                        <td>Pacote de Cookie de chocolate com 6 unidades</td>
+                        <td>31x5,6x2,5cm</td>
+                        <td>300g</td>
+                        <td>2,5cm</td>
+                        <td>R$ 27,00</td>
+                        <td>99678523</td>
+                        <td>6%</td>
+                        <td>04/06/2022</td>
+              
+        <div id="TabelaLetraC">
+            <h1>Compras Feitas entre o dia 10 e 12 de Junho</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Codigo</th>
+                        <th>Descrição</th>
+                        <th>Tamanho</th>
+                        <th>Peso</th>
+                        <th>Altura</th>
+                        <th>Preço</th>
+                        <th>Codigo</th>
+                        <th>Desconto</th>
+                        <th>Data de Validade</th>
+                    <tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kayky</td>
+                        <td>161.161.666-65</td>
+                        <td>Chocolate amargo</td>
+                        <td>Chocolate de sabor Amargo</td>
+                        <td>1x18x9 cm</td>
+                        <td>90g</td>
+                        <td>9cm</td>
+                        <td>R$ 10,00</td>
+                        <td>66088002</td>
+                        <td>3%</td>
+                        <td>02/08/2022</td>
+                    </tr>     
+                    <tr>
+                        <td>Luana<td>
+                        <td>101.121.141-15<td>
+                        <td>Pasta de amendoim sabor Creme de avelã</td>
+                        <td>Pasta de amendoim sabor Creme de avelã com adição de açucar</td>
+                        <td>10x10x12cm</td>
+                        <td>1kg</td>
+                        <td>12cm</td>
+                        <td>R$ 27,00</td>
+                        <td>55023145</td>
+                        <td>5%</td>
+                        <td>06/09/2022</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td>554.443.332-10</td>
+                        <td>Pacote de Cookie de chocolate</td>
+                        <td>Pacote de Cookie de chocolate com 6 unidades</td>
+                        <td>31x5,6x2,5cm</td>
+                        <td>300g</td>
+                        <td>2,5cm</td>
+                        <td>R$ 27,00</td>
+                        <td>99678523</td>
+                        <td>6%</td>
+                        <td>04/10/2022</td>
+                    </tr>
+
+        </div>      </tr>
+                </tbody>
+            </table>   
+        </div>
+    </body>
+</html>

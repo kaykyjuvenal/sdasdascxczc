@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trabalho Semestral</title>
+        <style>
+            body{
+                background-image: url(/Pw1-main/depositphotos_44542799-stock-illustration-polka-dots-background.jpg);
+                background-repeat: repeat;
+                margin: 0px;
+            }
+            #Navegacao{
+                margin: 0px 5px 0px 5px;
+                padding: 15px;
+                background-color: burlywood;
+                border: 3px groove brown;
+                position: relative;
+                float:left
+            }
+            #cabeca{
+                margin: 0px;
+                background-color: burlywood;
+                padding: 5px;
+                right: 0px;
+                left: 0px;
+                top: 0px;
+                overflow: hidden;
+            }
+            #sobreloja{
+                margin: 5px;
+                padding: 15px 15px 3px 15px;
+                background-color: burlywood;
+                border: 3px groove brown;
+                margin:10px 10px 10px 335px;
+            }
+            #pe{
+                margin: 0px;
+                background-color: burlywood;
+                padding: 5px;
+                right: 0px;
+                left: 0px;
+                top: 0px;
+                overflow: hidden;
+            }
+            h1, h2, h3, #legendinha{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: azure;
+            }
+            P{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: azure;
+                text-align: justify;
+            }
+            a{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: antiquewhite;
+            }
+            #carecao{
+                border: 2px groove brown;
+            }
+            table, tr, th, td{
+                color: darkslateblue;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-align: center;
+                border: 3px groove brown;
+            }
+            table{
+                background-color: brown;
+            }
+            th{
+                background-color: coral;
+            }
+            .impar{
+                background-color: khaki;
+            }
+            .par{
+                background-color:darkkhaki;
+            }
+            #divBusca{
+                margin: auto;
+                background-color:coral;
+                border:solid 1px;
+                border-radius:15px;
+                width:300px;
+            }
+            #txtBusca{
+                color: brown;
+                float:left;
+                background-color:transparent;
+                padding-left:5px;
+                font-size:18px;
+                border:none;
+                height:32px;
+                width:260px;
+                }
+            #buscado{
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="cabeca" style="border-bottom: 4px groove brown;">
+            <h1 style="float: Right;">LOJAS INGLESAS</h1>
+        </header>
+        <main>
+            <div>
+                <nav id="Navegacao">
+                    <h2 style="text-align: center;">BEM VINDO A <br> LOJAS INGLESAS: </h2>
+                    <hr style="border: 2px groove brown;">
+                    <ul>
+                        <li><a href="/Pw1-main/pagini.html">Pagina Inicial</a></li>
+                        <li><a href="/Pw1-main/pagClients.html">Pagina De Clientes</a></li>
+                        <li><a href="/Pw1-main/pagprodutos.Html" target="_blank">Pagina de Produtos</a></li>
+                        <li><a href="/Pw1-main/pagCompraeVenda.html" target="_blank">Pagina de Compra/Vendas</a></li>
+                        <li><a href="/Pw1-main/pagRelatorios.html" target="_blank">Pagina de Relatorios</a></li>
+                        <li><a href="/Pw1-main/pagini.html">Sair</a></li>
+                    </ul>
+                    <br><br>
+                    <hr style="border: 2px groove brown;">
+                    <h2 style="text-align: center;">MAIS SOBRE <br> LOJAS INGLESAS: </h2>
+                    <hr style="border: 2px groove brown;">
+                    <figure>
+                        <img id="carecao" src="/Pw1-main/retrato-de-um-homem-careca-de-olhos-azuis-fechar_78492-2788.webp" height="300px" width="200px">
+                        <figcaption id="legendinha">Dono da LOJAS INGLESAS: <br>Rico da Silva</figcaption>
+                    </figure>
+                </nav>
+            </div>
+            <section id="sobreloja">
+                <h1 style="text-align: center;">COMPRE JÁ</h1>
+                <hr style="border: 2px groove brown;">
+                <a href="/Pw1-main/pagClients.html" style="float: left;"><img src="/Pw1-main/3126647.png" height="128px" width="128px"></a>
+                <a href="/Pw1-main/pagprodutos.Html" target="_blank" style="justify-content: center;"><img src="/Pw1-main/613ceaae3543acdf381af20da47612dc.png" height="128px" width="128px" style="margin-left: 300px;"></a>
+                <a href="/Pw1-main/pagCompraeVenda.html" target="_blank" style="float: right;"><img src="/Pw1-main/1374128.png" height="128px" width="128px"></a>
+                <hr style="border: 2px groove brown;">
+                <h1 style="text-align: center;">RELATÓRIO DE VENDAS</h1>
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <div id="TabelaClientes(A)">
+                <h1 style="text-align: center;">RELATÓRIO POR CLIENTE</h1>
+                <hr style="border: 2px groove brown;">
+                <div id="divBusca">
+                    <input type="text" id="txtBusca" placeholder="Maria Aria"/>
+                    <img src="/Pw1-main/toppng.com-search-3-512x512.png" id="btnBusca" alt="Buscar" width="32" height="32">
+                </div><br>
+                <table id="PrintTabelaCliente(A)">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Sexo</th>
+                            <th>E-mail</th>
+                            <th>CPF</th>
+                            <th>Salário</th>
+                            <th colspan="3">Telefones</th>
+                        </tr>           
+                     </thead>
+                    <tbody>
+                        <tr class="impar">
+                            <td>Kayky Juvenal</td>
+                            <td>05/11/2006</td>
+                            <td>Masculino</td>
+                            <td>kayky.flavio@aluno.ifsp.edu.br</td>
+                            <td>161.161.666-65</td>
+                            <td>5002,00</td>
+                            <td>(16)982149333</td>
+                            <td>(16)982149333</td>
+                            <td>(16)982513899</td>
+                        </tr>
+                        <tr class="par">
+                            <td>Luana Monteiro</td>
+                            <td>17/12/2002</td>
+                            <td>Feminino</td>
+                            <td>monteiro.luana@aluno.ifsp.edu.br</td>
+                            <td>101.121.141-15</td>
+                            <td>72,00</td>
+                            <td>(16)981342697</td>
+                            <td>(16)981342697</td>
+                            <td>(--)---------</td>
+    
+                        </tr>
+                        <tr class="impar" id="buscado">
+                            <td>Maria Aria</td>
+                            <td>31/12/2222</td>
+                            <td>Não binário</td>
+                            <td>maria.maria@aluno.ifsp.edu.br</td>
+                            <td>554.443.332-10</td>
+                            <td>62,00</td>
+                            <td>(16)981342697</td>
+                            <td>(16)981342697</td>
+                            <td>(--)---------</td>
+                        </tr>
+                        <tr class="par">
+                            <td>Orvalho Flávio</td>
+                            <td>15/01/1455</td>
+                            <td>Pefriro não identificar</td>
+                            <td>oravalho.ovidio@aluno.ifsp.edu.br</td>
+                            <td>161.161.666-65</td>
+                            <td>502,00</td>
+                            <td>(16)982149333</td>
+                            <td>(--)---------</td>
+                            <td>(--)---------</td>
+                        </tr>
+                        <tr class="impar">
+                            <td>Giovane Ovane</td>
+                            <td>16/11/1810</td>
+                            <td>Masculino</td>
+                            <td>giovane.ovane@aluno.ifsp.edu.br</td>
+                            <td>101.121.141-15</td>
+                            <td>2,00</td>
+                            <td>(16)982513899</td>
+                            <td>(--)---------</td>
+                            <td>(--)---------</td>
+    
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <div id="TabelaClientes(A)">
+                <h1 style="text-align: center;">RELATÓRIO POR PRODUTO</h1>
+                <hr style="border: 2px groove brown;">
+                <div id="divBusca">
+                    <input type="text" id="txtBusca" placeholder="Vec. 02/03/2021"/>
+                    <img src="/Pw1-main/toppng.com-search-3-512x512.png" id="btnBusca" alt="Buscar" width="32" height="32">
+                </div><br>
+                <div id="TabelaProdutos">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Descrição</th>
+                                <th>Tamanho</th>
+                                <th>Peso</th>
+                                <th>Altura</th>
+                                <th>Preço</th>
+                                <th>Codigo</th>
+                                <th>Desconto</th>
+                                <th>Data de Validade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="impar">
+                                <td>Chocolate amargo</td>
+                                <td>Chocolate de sabor Amargo</td>
+                                <td>1x18x9 cm</td>
+                                <td>90g</td>
+                                <td>9cm</td>
+                                <td>R$ 10,00</td>
+                                <td>66088002</td>
+                                <td>3%</td>
+                                <td>02/06/2022</td>     
+                            </tr>
+                            <tr class="par">
+                                <td>Pasta de amendoim sabor Creme de avelã</td>
+                                <td>Pasta de amendoim sabor Creme de avelã com adição de açucar</td>
+                                <td>10x10x12cm</td>
+                                <td>1kg</td>
+                                <td>12cm</td>
+                                <td>R$ 87,00</td>
+                                <td>55023145</td>
+                                <td>5%</td>
+                                <td>06/06/2022</td>
+                            </tr>
+                            <tr class="impar">
+                                <td>Pacote de Cookie de chocolate</td>
+                                <td>Pacote de Cookie de chocolate com 6 unidades</td>
+                                <td>31x5,6x2,5cm</td>
+                                <td>300g</td>
+                                <td>2,5cm</td>
+                                <td>R$ 27,00</td>
+                                <td>99678523</td>
+                                <td>6%</td>
+                                <td>04/06/2022</td>
+                            </tr>
+                            <tr class="par" id="buscado">
+                                <td>Achocolatado tedinho</td>
+                                <td>pó de beber acompanhado de leite ou alguma coisa</td>
+                                <td>10x18x50 cm</td>
+                                <td>90g</td>
+                                <td>9cm</td>
+                                <td>R$ 155,00</td>
+                                <td>66088002</td>
+                                <td>3%</td>
+                                <td>02/03/2021</td>     
+                            </tr>
+                            <tr class="impar">
+                                <td>Chocolate açucarado</td>
+                                <td>Chocolate de sabor doce demais</td>
+                                <td>1x18x9 cm</td>
+                                <td>90g</td>
+                                <td>9cm</td>
+                                <td>R$ 33,00</td>
+                                <td>66088002</td>
+                                <td>3%</td>
+                                <td>02/06/2022</td>     
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <hr style="border: 2px groove brown;">
+                <div id="TabelaClientes(A)">
+                <h1 style="text-align: center;">RELATÓRIO POR COMPRA</h1>
+                <hr style="border: 2px groove brown;">
+                <div id="divBusca">
+                    <input type="text" id="txtBusca" placeholder="01 a 12 de Maio"/>
+                    <img src="/Pw1-main/toppng.com-search-3-512x512.png" id="btnBusca" alt="Buscar" width="32" height="32">
+                </div><br>
+                <div id="TabelaLetraC">
+                    <table style="margin: auto;">
+                        <thead>
+                            <tr>
+                                <th>CPF</th>
+                                <th>Nome</th>
+                                <th>Codigo</th>
+                                <th>Produto</th>
+                                <th>Horario</th>
+                                <th>Data</th>
+                                <th>Preço</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                            <tr class="impar">
+                                <td>161.161.666-65</td>
+                                <td>Kayky Juvenal</td>
+                                <td>66088002</td>
+                                <td>Chocolate amargo</td>
+                                <td>10:47</td>
+                                <td>02/05/2022</td>
+                                <td>R$ 10,00</td>
+                            </tr>     
+                            <tr class="par">
+                                <td>101.121.141-15</td>
+                                <td>Luana Monteiro</td>
+                                <td>55023145</td>
+                                <td>Pasta de amendoim sabor Creme de avelã</td>
+                                <td>18:01</td>
+                                <td>06/05/2022</td>
+                                <td>R$ 87,00</td>
+                            </tr>
+                            <tr class="impar">
+                                <td>554.443.332-10</td>
+                                <td>Maria Aria</td>
+                                <td>99678523</td>
+                                <td>Pacote de Cookie de chocolate</td>
+                                <td>14:40</td>
+                                <td>04/05/2022</td>
+                                <td>R$ 27,00</td>
+                            </tr>
+                            <tr class="par">
+                                <td>161.161.666-65</td>
+                                <td>Orvalho Flávio</td>
+                                <td>99678523</td>
+                                <td>Pacote de Cookie de chocolate</td>
+                                <td>16:58</td>
+                                <td>03/05/2022</td>
+                                <td>R$ 27,00</td>
+                            </tr>
+                            <tr class="impar">
+                                <td>101.121.141-15</td>
+                                <td>Giovane Ovane</td>
+                                <td>99678523</td>
+                                <td>Pacote de Cookie de chocolate</td>
+                                <td>14:45</td>
+                                <td>07/05/2022</td>
+                                <td>R$ 27,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer id="pe" style="text-align: center; border-top: 4px groove brown;">
+            <h2> Codificado por: </h2>
+            <h3>Luana Monteiro   &   Kayky Flávio</h3>
+        </footer>
+    </body>
+</html>
