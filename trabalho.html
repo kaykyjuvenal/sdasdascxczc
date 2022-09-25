@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Portal INW</title>
+        <script>
+            let objetosClientes = [ 
+                                {   nome:'Pedro',
+                                    data: '25/11/2004',
+                                    sexo: 'Masculino',
+                                    email: 'kayky.aluno@ifsp.edu.br',
+                                    cpf: '44004070805',
+                                    salario: '800',
+                                    telefone: '8080808000'
+                                },
+                                {   nome:'ABC-3Y67',
+                                    data: '25/11/2003',
+                                    sexo: 'Masculino',
+                                    email: 'neguito.juvenal@gmail.com',
+                                    cpf: '44503286728',
+                                    salario: '1200',
+                                    telefone: '1698149855'
+                                }
+                                ];
+            
+            function mostraObj(){
+                let i;
+                let objPar = document.getElementById("p1");
+                objPar.innerHTML = "";
+                for(i=0;i<objetosClientes.lenght;i++){
+                    objPar.innerHTML += "Cliente"+i+"<br>"+
+                                        "Nome: " + objetosClientes[i].nome+"<br>"+
+                                        "Data: " + objetosClientes[i].data+"<br>"+
+                                        "Sexo: " + objetosClientes[i].sexo+"<br>"+
+                                        "Email: " + objetosClientes[i].salario+"<br>"+
+                                        "CPF: " + objetosClientes[i].cpf+"<br>"+
+                                        "Salario: " + objetosClientes[i].salario+"<br>"+
+                                        "Telefone: " + objetosClientes[i].telefone+"<br><hr>";
+                }
+
+                let strJson = JSON.stringify(objetosClientes);
+                alert(strJson);
+            }
+            function insereObj(){
+                let oNome = document.getElementById("IptNome");
+                let aData = document.getElementById("IptData");
+                let oSexo = document.getElementById("IptSexo");
+                let oEmail = document.getElementById("IptEmail");
+                let oCPF = document.getElementById("IptCpf");
+                let oSalario = document.getElementById("IptSalario");
+                let oTelefone = document.getElementById("IptTelefone");
+                let nome = oNome.value;
+                let data = aData.value;
+                let sexo = oSexo.value;
+                let email = oEmail.value;
+                let cpf = oCPF.value;
+                let salario = oSalario.value;
+                let telefone = oTelefone.value;
+                let oCliente = {};
+                oCliente.nome = nome;
+                oCliente.data = data;
+                oCliente.sexo = sexo;
+                oCliente.email = email;
+                oCliente.cpf = cpf;
+                oCliente.salario = salario;
+                oCliente.telefone = telefone;
+                let flag = false;
+                for(i=0;i<objetosClientes.length;i++){
+                    if(objetosClientes[i].nome == nome){
+                        flag = true;
+                    }
+                }
+                if(flag){
+                    alert("Cliente já Cadastrado , insira outro nome.");
+                }else{
+                    objetosClientes.unshift(oCliente);
+                    mostrarObj();
+                    oNome.value = "";
+                    aData.value = "";
+                    oSexo.value = "";
+                    oEmail.value = "";
+                    oCPF.value = "";
+                    oSalario.value = "";
+                    oTelefone.value = "";
+                }
+            }
+            function removerObj(){
+                objetosClientes.pop();
+                mostraObj();
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label for="iptNome">Nome</label>
+            <input type="text" id="iptNome"><br>
+            <label for="iptData">Data</label>
+            <input type="date" id="iptData"><br>
+            <label for="iptSexo">Sexo</label>
+            <input type="text" id="iptSexo"><br>
+            <label for="iptEmail">Email</label>
+            <input type="email" id="iptEmail"><br>
+            <label for="iptCpf">CPF</label>
+            <input type="number" id="iptCpf"><br>
+            <label for="iptSalario">Salario</label>
+            <input type="number" id="iptSalario"><br>
+            <label for="iptTelefone">Telefone</label>
+            <input type="number" id="iptTelefone"><br>
+        </form>
+        <p id="p1"></p>
+        <button onclick="mostraObj()">Mostrar</button>
+        <button onclick="insereObj()">Inserir</button>
+        <button onclick="removerObj()">Remove</button>
+
+    </body>
+</html>
