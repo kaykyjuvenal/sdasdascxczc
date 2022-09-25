@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Portal INW</title>
+        <script>
+            let objetosCarros = [ 
+                                {   placa:'ABC-3Y67',
+                                    marca: 'Ferrari',
+                                    modelo: 'F8'
+                                },
+                                {   placa:'TKI-2P12',
+                                    marca: 'Porsche',
+                                    modelo: 'Cayman'
+                                }
+                                ];
+
+            function mostraObj(){
+                let i;
+                let objPar = document.getElementById("p1");
+                objPar.innerHTML = "";
+                for(i=0;i<objetosCarros.length;i++){
+                    objPar.innerHTML += "Carro-"+i+"<br>"+
+                                        "Placa: " + objetosCarros[i].placa+"<br>"+
+                                        "Marca: " + objetosCarros[i].marca+"<br>"+
+                                        "Modelo: " + objetosCarros[i].modelo+"<br><hr>";
+                }
+
+                let strJson = JSON.stringify(objetosCarros);
+                alert(strJson);
+            }
+            function insereObj(){
+                let oPlaca = document.getElementById("iptPlaca");
+                let oMarca = document.getElementById("iptMarca");
+                let oModelo = document.getElementById("iptModelo");
+                let placa = oPlaca.value;
+                let marca = oMarca.value;
+                let modelo = oModelo.value;
+                let oCarro = {};
+                oCarro.placa = placa;
+                oCarro.marca = marca;
+                oCarro.modelo = modelo;
+                let flag = false;
+                
+                for(i=0;i<objetosCarros.length;i++){
+                    if(objetosCarros[i].placa == placa){
+                        flag = true;
+                    }
+                }
+                if(flag){
+                    alert("Carro cadastrado. Insira outra placa.");
+                }else{
+                    objetosCarros.unshift(oCarro);
+                    mostraObj();
+                    oMarca.value = "";
+                    oPlaca.value = "";
+                    oModelo.value = "";
+                }
+            }
+
+            function removerObj(){
+                objetosCarros.pop();
+                mostraObj();    
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label for="iptPlaca">Placa</label>
+            <input type="text" id="iptPlaca"><br>
+            <label for="iptMarca">Marca</label>
+            <input type="text" id="iptMarca"><br>
+            <label for="iptModelo">Modelo</label>
+            <input type="text" id="iptModelo"><br>
+        </form>
+        <p id="p1"></p>
+        <button onclick="mostraObj()">Mostrar</button>
+        <button onclick="insereObj()">Inserir</button>
+        <button onclick="removerObj()">Remove</button>
+
+    </body>
+</html>
