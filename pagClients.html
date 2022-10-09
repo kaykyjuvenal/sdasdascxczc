@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trabalho Semestral</title>
+        <style>
+            body{
+                background-image: url(/Pw1-main/depositphotos_44542799-stock-illustration-polka-dots-background.jpg);
+                background-repeat: repeat;
+                margin: 0px;
+            }
+            #Navegacao{
+                margin: 0px 5px 0px 5px;
+                padding: 15px;
+                background-color: burlywood;
+                border: 3px groove brown;
+                position: relative;
+                float:left
+            }
+            #cabeca{
+                margin: 0px;
+                background-color: burlywood;
+                padding: 5px;
+                right: 0px;
+                left: 0px;
+                top: 0px;
+                overflow: hidden;
+            }
+            #sobreloja{
+                margin: 5px;
+                padding: 15px 15px 3px 15px;
+                background-color: burlywood;
+                border: 3px groove brown;
+                margin:10px 10px 10px 335px;
+            }
+            #pe{
+                margin: 0px;
+                background-color: burlywood;
+                padding: 5px;
+                right: 0px;
+                left: 0px;
+                top: 0px;
+                overflow: hidden;
+            }
+            h1, h2, h3, #legendinha{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: azure;
+            }
+            P{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: azure;
+                text-align: justify;
+            }
+            a{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: antiquewhite;
+            }
+            #carecao{
+                border: 2px groove brown;
+            }
+            label{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: azure;
+                font-size: larger;
+            }
+            table, tr, th, td{
+                color: darkslateblue;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-align: center;
+                border: 3px groove brown;
+            }
+            table{
+                background-color: brown;
+            }
+            th{
+                background-color: coral;
+            }
+            .impar{
+                background-color: khaki;
+            }
+            .par{
+                background-color:darkkhaki;
+            }
+            #divBusca{
+                margin: auto;
+                background-color:coral;
+                border:solid 1px;
+                border-radius:15px;
+                width:300px;
+            }
+            #txtBusca{
+                color: brown;
+                float:left;
+                background-color:transparent;
+                padding-left:5px;
+                font-size:18px;
+                border:none;
+                height:32px;
+                width:260px;
+                }
+            #buscado{
+                background-color: brown;
+            }
+
+        </style>
+            <script>
+                let objetosClientes = [ 
+                                    {   nome:'Pedro',
+                                        data: '25/11/2004',
+                                        sexo: 'Masculino',
+                                        email: 'kayky.aluno@ifsp.edu.br',
+                                        cpf: '44004070805',
+                                        salario: '800',
+                                        telefone: '8080808000'
+                                    },
+                                    {   nome:'Kayky',
+                                        data: '25/11/2003',
+                                        sexo: 'Masculino',
+                                        email: 'neguito.juvenal@gmail.com',
+                                        cpf: '44503286728',
+                                        salario: '1200',
+                                        telefone: '1698149855'
+                                    }
+                                    ];
+                function pegaIdevalue(nome){
+                    let objetoValorado = document.getElementById(nome).value;
+                    return objetoValorado;
+                }
+                function criaFormulario(id, num){
+                    let formPesq = document.getElementById(id);
+                    formPesq.innerHTML = "<form><label for='id'>ID: </label><input type:'number' id = 'id" + num + "'></form>"
+                }
+                function criaBot(id, funcao, msg){
+                    let boot = document.getElementById(id);
+                    boot.innerHTML +="<button onclick="+ funcao +">"+ msg + "</button>"
+                }
+                function mostraObj(){
+                    let i;
+                    let objPar = document.getElementById("p1");
+                    objPar.innerHTML = "";
+                    for(i=0;i<objetosClientes.length;i++){
+                        objPar.innerHTML += "Cliente"+(i+1)+"<br>"+
+                                            "Nome: " + objetosClientes[i].nome+"<br>"+
+                                            "Data: " + objetosClientes[i].data+"<br>"+
+                                            "Sexo: " + objetosClientes[i].sexo+"<br>"+
+                                            "Email: " + objetosClientes[i].email+"<br>"+
+                                            "CPF: " + objetosClientes[i].cpf+"<br>"+
+                                            "Salario: " + objetosClientes[i].salario+"<br>"+
+                                            "Telefone: " + objetosClientes[i].telefone+"<br><hr>";
+                    }
+
+                    let strJson = JSON.stringify(objetosClientes);
+                    alert(strJson);
+                }
+                function mostraObjum(i){
+                    let objPar = document.getElementById("p1");
+                    objPar.innerHTML = "";
+                    objPar.innerHTML += "Cliente"+(i)+"<br>"+
+                                        "Nome: " + objetosClientes[i].nome+"<br>"+
+                                        "Data: " + objetosClientes[i].data+"<br>"+
+                                        "Sexo: " + objetosClientes[i].sexo+"<br>"+
+                                        "Email: " + objetosClientes[i].email+"<br>"+
+                                        "CPF: " + objetosClientes[i].cpf+"<br>"+
+                                        "Salario: " + objetosClientes[i].salario+"<br>"+
+                                        "Telefone: " + objetosClientes[i].telefone+"<br><hr>";
+                    let strJson = JSON.stringify(objetosClientes);
+                }
+                function insereObj(){
+                    let oNome = pegaIdevalue("iptNome");
+                    let aData = pegaIdevalue("iptData");
+                    let oSexo = pegaIdevalue("iptSexo");
+                    let oEmail = pegaIdevalue("iptEmail");
+                    let oCPF = pegaIdevalue("iptCpf");
+                    let oSalario = pegaIdevalue("iptSalario");
+                    let oTelefone = pegaIdevalue("iptTelefone");
+                    let oCliente = {};
+                    oCliente.nome = oNome;
+                    oCliente.data = aData;
+                    oCliente.sexo = oSexo;
+                    oCliente.email = oEmail;
+                    oCliente.cpf = oCPF;
+                    oCliente.salario = oSalario;
+                    oCliente.telefone = oTelefone;
+                    let flag = false;
+                    for(i=0;i<objetosClientes.length;i++){
+                        if(objetosClientes[i].nome == oNome){
+                            flag = true;
+                        }
+                    }
+                    if(flag){
+                        alert("Cliente já Cadastrado , insira outro nome.<br>");
+                    }else{
+                        objetosClientes.unshift(oCliente);
+                        mostraObj();
+                        }
+                }
+                function removerObj(){
+                    objetosClientes.pop();
+                    mostraObj();
+                }
+                function mostrarumObjeto(){
+                    let i;
+                    let idprocurado = pegaIdevalue("idprocurado");
+                    if(idprocurado,objetosClientes.length){
+                        for(i=0;i<objetosClientes.length;i++){
+                            mostraObjum(idprocurado);
+                        }
+                    }
+                }
+                function apagarUmObjeto(id){
+                    let idprocurado = pegaIdevalue("idprocurado")
+                    if(idprocurado,objetosClientes.length){
+                        for(i=0; i< objetosClientes.length;i++){
+                            objetosClientes.splice(idprocurado,1);
+                        }
+                        print("A Remoção foi Concluida com Sucesso.<br>");
+                    }else{
+                        print("Não foi possível , id invalido.");
+                    }
+                }
+                function mostrarNaTable(){
+                    let table = document.getElementById("tableResultante");
+                    table.innerHTML = '<table><thead><tr><th>Nome Clientes</th><th>Data</th><th>Sexo</th><th>Email</th><th>CPF</th><th>Salario</th><th>Telefone</th></tr></thead><tbody id="escritaAqui"><tr><td>12315416598</td><td>22525</td><td>23/02/2021</td><td>16:49</td><td>128,09</td></tr></tbody></table>';
+                    let i;
+                    let insira = document.getElementById("escritaAqui");
+                    insira.innerHTML = "";
+                    for(i=0; i<objetosClientes.length; i++){
+                        insira.innerHTML += "<tr>" + "<td>" + objetosClientes[i].nome + "</td>" + "<td>" + objetosClientes[i].data + "</td>" +
+                            "<td>" + objetosClientes[i].sexo + "</td>" + "<td>" + objetosClientes[i].email + "</td>" +
+                            "<td>" + objetosClientes[i].cpf + "</td>" + "<td>" + objetosClientes[i].salario + "</td>" + "<td>" + objetosClientes[i].telefone + "</td>" + "</tr>";
+                    }
+                }
+                function alteraUmSo(){
+                    criaFormulario("qual3", 3)
+                    criaBot("qual3", "alteraUmSoUm()", "ALTERAR")
+                }
+                let idArm;
+                function alteraUmSoUm(){
+                    let idAltUm = pegaIdevalue("id3")
+                    if(idAltUm< objetosClientes.length){
+                        for (let i = 0; i < objetosClientes.length; i++){
+                            if (idAltUm == i){
+                                idArm = i;
+                                let altForm = document.getElementById("qual3")
+                                altForm.innerHTML = "<form><label for='nomeN'>Nome: </label><input type:'text' id = 'nomeN'><br><br><label for='dataN'>Data: </label><input type:'date' id = 'dataN'><br><br></form>"+
+                                "<label for='sexoN'>Sexo: </label><input type:'text' id = 'sexoN'><br><br><label for='emailN'>Email: </label><input type:'text' id = 'emailN'><br><br><label for='cpfN'>Cpf: </label><input type:'number' id = 'cpfN'><br><br><label for='salarioN'>Salario: </label><input type:'number' id = 'salarioN'><br><br><label for='telefoneN'>Telefone: </label><input type:'number' id = 'telefoneN'><br><br>"
+                                criaBot("qual3", "alteraUltimate(id)", "SALVAR ALTERAÇÕES")
+                            }
+                        }
+                    }
+                    else{alert("Objeto não encontrado, favor colocar outro id para alteração")}
+                }
+                function alterado(id){
+                    let altForm = document.getElementById("qual3")
+                    altForm.innerHTML = "<form><label for='nomeN'>Nome: </label><input type:'text' id = 'nomeN'><br><br><label for='dataN'>Data: </label><input type:'date' id = 'dataN'><br><br></form>"+
+                    "<label for='sexoN'>Sexo: </label><input type:'text' id = 'sexoN'><br><br><label for='emailN'>Email: </label><input type:'text' id = 'emailN'><br><br><label for='cpfN'>Cpf: </label><input type:'number' id = 'cpfN'><br><br><label for='salarioN'>Salario: </label><input type:'number' id = 'salarioN'><br><br><label for='telefoneN'>Telefone: </label><input type:'number' id = 'telefoneN'><br><br>"
+                    criaBot("qual3", "alteraUltimate(id)", "SALVAR ALTERAÇÕES")
+                }
+                function alteraUltimate(idArm){
+                    objetosClientes[idArm].nome = pegaIdevalue("nomeN");
+                    objetosClientes[idArm].data = pegaIdevalue("dataN");
+                    objetosClientes[idArm].sexo = pegaIdevalue("sexoN");
+                    objetosClientes[idArm].email = pegaIdevalue("emailN");
+                    objetosClientes[idArm].cpf = pegaIdevalue("cpfN");
+                    objetosClientes[idArm].salario = pegaIdevalue("salarioN");
+                    objetosClientes[idArm].telefone = pegaIdevalue("telefoneN");
+                    alert("Objeto alterado com sucesso!")
+                }
+            </script>
+    </head>
+    <body>
+        <header id="cabeca" style="border-bottom: 4px groove brown;">
+            <h1 style="float: Right;">LOJAS INGLESAS</h1>
+        </header>
+        <main>
+            <div>
+                <nav id="Navegacao">
+                    <h2 style="text-align: center;">BEM VINDO A <br> LOJAS INGLESAS: </h2><br>
+                    <hr style="border: 2px groove brown;">
+                    <ul>
+                        <li><a href="/Pw1-main/pagini.html">Pagina Inicial</a></li>
+                        <li><a href="/Pw1-main/pagClients.html">Pagina De Clientes</a></li>
+                        <li><a href="/Pw1-main/pagprodutos.Html" target="_blank">Pagina de Produtos</a></li>
+                        <li><a href="/Pw1-main/pagCompraeVenda.html" target="_blank">Pagina de Compra/Vendas</a></li>
+                        <li><a href="/Pw1-main/pagRelatorios.html" target="_blank">Pagina de Relatorios</a></li>
+                        <li><a href="/Pw1-main/pagini.html">Sair</a></li>
+                    </ul>
+                    <br><br>
+                    <hr style="border: 2px groove brown;">
+                    <h2 style="text-align: center;">MAIS SOBRE <br> LOJAS INGLESAS: </h2>
+                    <hr style="border: 2px groove brown;">
+                    <figure>
+                        <img id="carecao" src="/Pw1-main/retrato-de-um-homem-careca-de-olhos-azuis-fechar_78492-2788.webp" height="300px" width="200px">
+                        <figcaption id="legendinha">Dono da LOJAS INGLESAS: <br>Rico da Silva</figcaption>
+                    </figure>
+                </nav>
+            </div>
+            <section id="sobreloja">
+                <h1 style="text-align: center;">COMPRE JÁ</h1>
+                <hr style="border: 2px groove brown;">
+                <a href="/Pw1-main/pagClients.html" style="float: left;"><img src="/Pw1-main/3126647.png" height="128px" width="128px"></a>
+                <a href="/Pw1-main/pagprodutos.Html" target="_blank" style="justify-content: center;"><img src="/Pw1-main/613ceaae3543acdf381af20da47612dc.png" height="128px" width="128px" style="margin-left: 300px;"></a>
+                <a href="/Pw1-main/pagCompraeVenda.html" target="_blank" style="float: right;"><img src="/Pw1-main/1374128.png" height="128px" width="128px"></a>
+                <hr style="border: 2px groove brown;">
+                <h1 style="text-align: center;">CADASTRO DE CLIENTES</h1>
+                <hr style="border: 2px groove brown;">
+                <div id="Formulario dos Clientes">
+                    <form style="text-align: center;">
+                        <label for="nome">Digite o nome: </label>
+                        <br><br>
+                        <input type="text" id="iptNome">
+                        <br><br>
+                        <label for="nasce">Digite a Data de nascimento: </label>
+                        <br><br>
+                        <input type="date" id="iptData">
+                        <br><br>
+                        <label for="sexo">Sexo:</label><br>
+                        <input type="text" id="iptSexo"><br>
+                        <br><br>
+                        <label for="email">Digite o E-mail: </label>
+                        <br><br>
+                        <input type="email" id="iptEmail">
+                        <br><br>
+                        <label for="cpf">Digite o CPF: </label>
+                        <br><br>
+                        <input type="number" id="iptCpf">
+                        <br><br>
+                        <label for="salario">Digite o Salario: </label>
+                        <br><br>
+                        <input type="number" id="iptSalario" >
+                        <br><br>
+                        <label for="Telefone">Digite o Telefone: </label>
+                        <br><br>
+                        <input type="number" id="iptTelefone">
+                        <br><br>
+                    </form>
+                </div><br>
+                    <p id="p1"></p>
+                    <button onclick="mostrarNaTable()">Mostrar</button>
+                    <button onclick="insereObj()">Inserir</button>
+                    <button onclick="apagarUmObjeto()">Remover</button>
+                    <button onclick="mostrarumObjeto()">Mostrar Especifico</button>
+                    <button onclick="alteraUmSo()">Altera um item</button>
+                    <div id="qual3"></div><br>
+                    <div id="tableResultante"></div>
+                <div id="mostrarumobjeto">
+                    <form>
+                        <label for="idprocurado">Digite o indice para fazer a pesquisa: </label> 
+                        <br><br>
+                        <input type="text" id="idprocurado" name="idprocurado"> 
+                    </form>
+            </section>
+        </main>
+        <footer id="pe" style="text-align: center; border-top: 4px groove brown;">
+            <h2> Codificado por: </h2>
+            <h3>Luana Monteiro   &   Kayky Flávio</h3>
+        </footer>
+    </body>
+</html>
